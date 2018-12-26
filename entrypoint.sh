@@ -10,7 +10,7 @@ fi
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
-gh-pages -d $PUBLIC_PATH -b gh-pages
+gh-pages -d $PUBLIC_PATH -b gh-pages -dotfiles=true
 
 curl --request POST -H "Authorization: token ${GITHUB_TOKEN}" \
   --url "https://api.github.com/repos/$GITHUB_REPOSITORY/pages/builds" \
